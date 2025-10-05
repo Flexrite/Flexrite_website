@@ -1,9 +1,7 @@
 [build]
-  base = "/"
-  command = "npm run build:client"
+  command = "npm run build:client && ls -la dist/spa"
   functions = "netlify/functions"
   publish = "dist/spa"
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
 
 [functions]
   external_node_modules = ["express"]
