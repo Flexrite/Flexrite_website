@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap");
+
+.text3d {
+  position: relative;
+  min-height: 20vh;
+  display: block;
+  overflow: hidden;
+}
+
+.text3d__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(calc(-50% - 12px), calc(-50% + 12px), 0) scale(var(--scale, 1));
+  mix-blend-mode: screen;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 10vw + 1rem, 10rem);
+  letter-spacing: clamp(0.1em, 1.2vw, 0.2em);
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow:
+    0px 0px white,
+    0px 0px white,
+    0px 0px white,
+    0px 0px white,
+    0px 0px white,
+    0px 0px white,
+    0px 0px white,
+    0px 0px white,
+    0px 0px white,
+    0px 0px white,
+    0px 0px white;
+  opacity: 0;
+  animation: revolve 2s cubic-bezier(0.47, 0.01, 0, 1.01) forwards 0.5s;
+}
+
+@keyframes revolve {
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(var(--scale, 1));
+    text-shadow:
+      -2px 1px white,
+      -3px 2px white,
+      -4px 3px white,
+      -5px 4px white,
+      -6px 5px white,
+      -7px 6px white,
+      -8px 7px white,
+      -9px 8px white,
+      -10px 9px white,
+      -11px 10px white,
+      -12px 11px white;
+  }
+}
+
+/* Responsive fine-tuning */
+@media (max-width: 640px) {
+  .text3d__text {
+    transform: translate3d(calc(-50% - 8px), calc(-50% + 8px), 0) scale(var(--scale, 1));
+  }
+}
+
+/* Footer text (no background) */
+.footer-3d-wrap { position: relative; overflow: visible; }
+.footer-3d-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: clamp(0.08em, 1vw, 0.16em);
+  font-size: clamp(1.25rem, 6vw, 4rem);
+  line-height: 1;
+  color: #ffffff;
+  mix-blend-mode: screen;
+  text-shadow:
+    -2px 1px white,
+    -3px 2px white,
+    -4px 3px white,
+    -5px 4px white,
+    -6px 5px white,
+    -7px 6px white,
+    -8px 7px white,
+    -9px 8px white,
+    -10px 9px white,
+    -11px 10px white,
+    -12px 11px white;
+}
