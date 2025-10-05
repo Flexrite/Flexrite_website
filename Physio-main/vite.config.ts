@@ -15,6 +15,13 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist/spa",
+    sourcemap: false,
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        sourcemap: false,
+      },
+    },
   },
   plugins: [react(), expressPlugin()],
   resolve: {
